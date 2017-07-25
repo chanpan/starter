@@ -1,11 +1,10 @@
 var sqlite = require('sqlite-cipher');
-const path = require('path');
-
+ 
 var conn = "";
 var m = module.exports = {
     connectdb: () => {
-        
-        return conn = sqlite.connect("./assets/db.enc", 'Q2hhbnBhbjA3', 'aes-256-ctr');
+        conn = sqlite.connect("./assets/db.enc", 'Q2hhbnBhbjA3', 'aes-256-ctr');
+        return conn;
     },
     query: (sql) => {
         return conn.run(sql,(res) => {
@@ -15,13 +14,13 @@ var m = module.exports = {
         })
     },
     create:(table="",data)=>{
-         conn.insert(table,data,(res)=>{
+         conn.insert(table,data,(res)=>{ //{fname:'demo', lname:'demo'}
             if (res.error)  console.error("ERROR " + res.error); 
              console.log(res);
          });
     },
     update:(table="",data, wheres)=>{
-         conn.insert(table,data,wheres,(res)=>{
+         conn.update(table,data,wheres,(res)=>{
             if (res.error)  console.error("ERROR " + res.error); 
              console.log(res);
          });
