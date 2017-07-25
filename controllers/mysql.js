@@ -3,10 +3,10 @@ var conn = "";
 var m = module.exports = {
     connectdb: () => {
         conn = mysql.createConnection({
-            host: 'localhost',
-            user: 'root',
+            host: 'www.thaicarecloud.org',
+            user: 'electron',
             password: '',
-            database: 'dpmcloud'
+            database: 'electron'
         });
         conn.connect();
     },
