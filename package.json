@@ -1,0 +1,16 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "electron desktop",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "electron-reload": "^1.2.1",
+    "jquery": "^3.2.1"
+  }
+}
